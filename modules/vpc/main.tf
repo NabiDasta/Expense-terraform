@@ -135,7 +135,7 @@ resource "aws_vpc_peering_connection" "peer" {
   peer_vpc_id   = var.default_vpc_id
   vpc_id        = aws_vpc.main.id
   auto_accept   = true
-  tags = merge(var.tags, { Name = "peer-for-$(var.env)-vpc-to-default-vpc" })
+  tags = merge(var.tags, { Name = "peer-for-${var.env}-vpc-to-default-vpc" })
 }
 
 resource "aws_route" "default-vpc-peer-route" {
@@ -145,6 +145,7 @@ resource "aws_route" "default-vpc-peer-route" {
 
 }
 
+##Testing
 resource "aws_instance" "test" {
   ami = "ami-03265a0778a880afb"
   instance_type = "t3.micro"
