@@ -31,9 +31,7 @@ resource "aws_security_group" "main" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  tags = {
-    Name = "allow_tls"
-  }
+  tags = merge(var.tags, {Name = "${var.env}-mysql-rds"})
 }
 
 resource "aws_db_instance" "main" {
