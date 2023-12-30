@@ -87,7 +87,7 @@ resource "aws_iam_role" "main" {
       "Version": "2012-10-17",
       "Statement": [
         {
-          "Sid": "GetResources ",
+          "Sid": "GetResources",
           "Effect": "Allow",
           "Action": [
             "ssm:GetParameterHistory",
