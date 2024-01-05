@@ -95,7 +95,10 @@ resource "aws_iam_role" "main" {
             "ssm:GetParameters",
             "ssm:GetParameter"
           ],
-          "Resource": "arn:aws:ssm:us-east-1:146677740583:parameter/${var.env}.${var.component}.*"
+          "Resource": [
+            "arn:aws:ssm:us-east-1:146677740583:parameter/${var.env}.${var.component}.*"
+            "arn:aws:ssm:us-east-1:146677740583:parameter/${var.env}.rds.*"
+            ]
         },
         {
           "Sid": "ListResources",
