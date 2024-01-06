@@ -27,6 +27,12 @@ backend = {
   instance_count = 1
   instance_type = "t3.micro"
 }
+
+frontend = {
+  app_port = 8080
+  instance_count = 1
+  instance_type = "t3.micro"
+}
 bastion_cidrs = ["172.31.39.41/32"]
 
 
